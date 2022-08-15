@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.project.munhwa.apply.ApplyMapper">
+	<resultMap type="com.project.munhwa.apply.Apply" id="Apply">
+		<result property="artcl_Seq"			column="artcl_Seq" />
+		<result property="name"					column="name" />
+		<result property="name_Hanja"			column="name_Hanja" />
+		<result property="birthday"				column="birthday" />
+		<result property="calendar"				column="calendar" />
+		<result property="tel"					column="tel" />
+		<result property="phone"				column="phone" />
+		<result property="parent_Phone"			column="parent_Phone" />
+		<result property="so_Sok"				column="so_Sok" />
+		<result property="grade"				column="grade" />
+		<result property="email"				column="email" />
+		<result property="img_Origin_Nm"		column="img_Origin_Nm" />
+		<result property="img_File_Nm"			column="img_File_Nm" />
+		<result property="img_Path"				column="img_Path" />
+		<result property="doc_Origin_Nm"		column="doc_Origin_Nm" />
+		<result property="doc_File_Nm"			column="doc_File_Nm" />
+		<result property="doc_Path"				column="doc_Path" />
+		<result property="etc_Doc_Origin_Nm"	column="etc_Doc_Origin_Nm" />
+		<result property="etc_Doc_File_Nm"		column="etc_Doc_File_Nm" />
+		<result property="etc_Doc_Path"			column="etc_Doc_Path" />
+		<result property="reg_date"				column="reg_date" />
+		<result property="edit_date"			column="edit_date" />
+		<result property="etc"					column="etc" />
+		<result property="type"					column="type" />
+		<result property="add_Item1"			column="add_Item1" />
+		<result property="add_Item2"			column="add_Item2" />
+		<result property="add_Item3"			column="add_Item3" />
+		<result property="add_Item4"			column="add_Item4" />
+		<result property="add_Item5"			column="add_Item5" />
+	</resultMap>
+	
+	
+	<resultMap type="com.project.munhwa.apply.ApplyAtchmnfl" id="ApplyAtchmnfl">
+		<result property="atchmnfl_Seq"			column="atchmnfl_Seq" />
+		<result property="artcl_Seq"			column="artcl_Seq" />
+		<result property="name"					column="name" />
+		<result property="doc_Origin_Nm"		column="doc_Origin_Nm" />
+		<result property="doc_File_Nm"			column="doc_File_Nm" />
+		<result property="doc_Path"				column="doc_Path" />
+		<result property="etc_Doc_Origin_Nm"	column="etc_Doc_Origin_Nm" />
+		<result property="etc_Doc_File_Nm"		column="etc_Doc_File_Nm" />
+		<result property="etc_Doc_Path"			column="etc_Doc_Path" />
+		<result property="reg_date"				column="reg_date" />
+		<result property="edit_date"			column="edit_date" />
+		<result property="add_Item1"			column="add_Item1" />
+		<result property="add_Item2"			column="add_Item2" />
+		<result property="add_Item3"			column="add_Item3" />
+		<result property="add_Item4"			column="add_Item4" />
+		<result property="add_Item5"			column="add_Item5" />
+	</resultMap>
+	
+	
+	
+	<!-- 가천효행대상 INSERT -->
+	<insert id="insertAward" parameterType="com.project.munhwa.apply.ApplyMapper" 
+			useGeneratedKeys="true" keyProperty="artcl_Seq"> 
+		INSERT INTO munwha_award_artcl (
+			name, name_Hanja, birthday, calendar, tel, phone, parent_Phone, so_Sok, grade, email,
+			img_Origin_Nm, img_File_Nm, img_Path, etc, type, reg_date, edit_date
+			add_Item1, add_Item2, add_Item3, add_Item4, add_Item5
+		) VALUES (
+			#{name}, #{name_Hanja}, #{birthday}, #{calendar}, #{tel}, #{phone}, #{parent_Phone}, #{so_Sok}, #{grade}, #{email},
+			#{img_Origin_Nm}, #{img_File_Nm}, #{img_Path}, #{etc}, #{type}, now(), now(),
+			null, null, null, null, null
+		);
+	</insert>
+	
+	
+	
+	
+	
+	<!-- 가천효행대상 파일업로드 INSERT -->
+	<insert id="insertAtchmnfl" parameterType="java.util.List"
+			useGeneratedKeys="true" keyProperty="atchmnfl_Seq">
+		INSERT INTO munwha_award_artcl (
+			artcl_Seq, name, doc_Origin_Nm, doc_File_Nm, doc_Path, etc_Doc_Origin_Nm, etc_Doc_File_Nm, etc_Doc_Path, reg_date, edit_date,
+			add_Item1, add_Item2, add_Item3, add_Item4, add_Item5
+		) VALUES 
+			<foreach collection="list" item="item" separator=" , ">
+				(
+					#{item.artcl_Seq}, #{item.name}, #{item.doc_Origin_Nm}, #{item.doc_File_Nm}, #{item.doc_Path}, 
+					#{item.etc_Doc_Origin_Nm}, #{item.etc_Doc_File_Nm}, #{item.etc_Doc_Path}, now(), now(),
+					null, null, null, null, null
+				);
+			</foreach>
+		
+	</insert>
+	
+	
+	
+	
+	
+</mapper>
