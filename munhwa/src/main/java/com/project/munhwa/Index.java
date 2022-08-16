@@ -7,12 +7,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class Index {
 
-	@RequestMapping(value = "/")
-	public ModelAndView index() {
-		
+	@RequestMapping(value = "")
+	public String index() {
+
 		System.out.println("Controller index");
-		ModelAndView mav = new ModelAndView("/index");
 		
-		return mav;
+		return "index";
 	}
 }
