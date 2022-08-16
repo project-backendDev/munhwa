@@ -4,6 +4,24 @@
     padding-top: 10.625rem;  
     box-sizing: border-box;  
 }  
+.pause{
+    position: absolute;
+    z-index: 600;
+    top: 2.3125rem;
+    left: 36%;
+    color: #fff;
+    display: flex;
+    justify-content: right;
+    width: 10%;
+}
+.pause > div{
+    cursor: pointer;
+    margin-left: 10px;
+}
+.pause > div img{
+    filter: brightness(100);
+    height: 16px;
+}
   
 /* section0 */  
  
@@ -138,6 +156,7 @@
     width: 50%;  
     height: 26.25rem;  
     text-align: center;  
+    position: relative;
 }  
 #section1 .wrap .sec_top .sec_box.right .swiper-slide .slide_con .txt h6{  
     padding-top: 6.875rem;  
@@ -253,6 +272,7 @@
 }  
 #section1 .wrap .sec_bottom .sec_box .con ul li{  
     margin: 0 0.1875rem;  
+    transition: .3s;
 }  
 #section1 .wrap .sec_bottom .sec_box .con ul li a{  
     font-weight: 700;  
@@ -263,10 +283,11 @@
     box-sizing: border-box;  
     border: 0.0625rem solid #fff;  
 }  
-#section1 .wrap .sec_bottom .sec_box:nth-child(1) .con ul li a{  
-    background: #fff;  
-    color: #004593;  
-}  
+#section1 .wrap .sec_bottom .sec_box .con ul li.vr{
+    background: #548235;
+    transition: .3s;
+}
+
 #section1 .wrap .sec_bottom .sec_box:nth-child(1) .bg_color{  
     background: #004593;  
 }  
@@ -276,6 +297,23 @@
 #section1 .wrap .sec_bottom .sec_box:nth-child(3) .bg_color{  
     background: #F8B500;  
 }  
+
+#section1 .wrap .sec_bottom .sec_box:nth-child(1) .con ul li:hover{  
+    background: #fff;
+    color: #004593;  
+}  
+#section1 .wrap .sec_bottom .sec_box:nth-child(2) .con ul li:hover{  
+    background: #fff;
+    color: #7FBE26;  
+}  
+#section1 .wrap .sec_bottom .sec_box:nth-child(3) .con ul li:hover{  
+    background: #fff;
+    color: #F8B500;  
+} 
+#section1 .wrap .sec_bottom .sec_box .con ul li.vr:hover{
+    background: #fff;
+}
+
 /* section2 */  
   
 #section2 .wrap .sec_top {  
@@ -449,6 +487,11 @@
     font-size: 2.5rem;  
     font-weight: 700;  
 }  
+#section3 .wrap .sec_head h2 span{  
+    font-size: 2.5rem;  
+    font-weight: 700;  
+    color: #004593;
+}
 #section3 .wrap .sec_wrap{  
     display: flex;  
     align-items: center;  
@@ -726,7 +769,7 @@
         background-size: cover !important;
     }
     #section0 .visu_slide .slide3{
-        background: url(../images/main3_mo.jpg) no-repeat center center !important;
+        background: url(../images/main3_2_mo.png) no-repeat center center !important;
         background-size: cover !important;
     }
     #section0 .visu_slide .shadow{
@@ -858,6 +901,12 @@
     }
     #section0 .visu_slide .slide_txt h4{
         font-size: 1.425rem;
+    }
+    .pause{
+        /* width: 100%;
+        left: unset;
+        right: 20px; */
+        left: 85%;
     }
 } 
 @media screen and (max-width: 500px){

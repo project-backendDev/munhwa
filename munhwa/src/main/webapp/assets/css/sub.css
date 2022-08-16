@@ -414,8 +414,8 @@ ul.tabs.type2 li{
     padding: 1.25rem 0.9375rem;       
     border: 0.0625rem solid #dddddd;       
     box-sizing: border-box;       
-    border-left: none;       
-    border-bottom: none;       
+    /* border-left: none; */
+    /* border-bottom: none; */
 }       
 ul.tabs.type2 li:nth-child(1),       
 ul.tabs.type2 li:nth-child(9),       
@@ -437,7 +437,7 @@ ul.tabs.type3 li{
     box-sizing: border-box;       
     border-left: none;       
     border-bottom: none;       
-    font-size: 1.75rem;     
+    font-size: 1.45rem;     
     border-radius: 31.25rem;     
     background: #F7F8F9;     
     margin-top: 1.25rem;     
@@ -635,8 +635,9 @@ ul.tabs.type4 li:last-child{
 .book ul li{         
     border-bottom: 0.0625rem solid #dddddd;         
 }         
-.book ul li:first-child{         
-    border-top: 0.0625rem solid #000000;         
+.book ul li:first-child .con{         
+    /* border-top: 0.0625rem solid #000000;          */
+    padding-top: 0;
 }         
 .book ul li .con{         
     display: flex;         
@@ -791,6 +792,7 @@ input::placeholder{
     padding: 1.125rem 1.875rem;        
     border-right: none;        
     font-weight: 400;        
+    box-sizing: border-box;
 }        
     
 .table.type2 table{    
@@ -1128,10 +1130,10 @@ table .medal p{
     color: #999999;       
 }       
 .information .info_head .txt h5{       
-    margin-top: 0.9375rem;       
-    margin-bottom: 0.9375rem;       
-    font-size: 1.25rem;       
-    font-weight: 600;       
+    margin-top: 1.2375rem;
+    margin-bottom: 1.2375rem;
+    font-size: 1.25rem;
+    font-weight: 600;  
 }       
 .information .info_head .txt p{       
     color: #666666;       
@@ -1189,6 +1191,9 @@ p.dot_list.blue .blue_txt{
     justify-content: center;       
     color: #333333;      
 }       
+.information .table tr th.border{
+    border-left:0.0625rem solid #bbbbbb;
+}
 .information .table tr th p i{       
     margin-right: 0.3125rem;       
 }       
@@ -1341,6 +1346,7 @@ p.dot_list.blue .blue_txt{
     background: #004593;      
     color: #fff;    
     display: inline-block;  
+    box-sizing: border-box;
 }  
 .btn_list ul li button{  
     text-align: center; 
@@ -1372,6 +1378,10 @@ p.dot_list.blue .blue_txt{
     height: 13.125rem;      
     margin: 0 auto;      
 }      
+.slide_wrap .photo_slide .swiper-slide .slide_img + p{
+    margin-top: 0.5rem;
+    text-align: center;
+}
 .slide_wrap .swiper-button-prev{      
     left: -4.375rem !important;      
     background-image: url(../images/slide_prev.png) !important;      
@@ -1434,6 +1444,55 @@ p.dot_list.blue .blue_txt{
     margin-top: 0.625rem;      
     color: #666666;      
 }      
+.biz_intro {
+    text-align: center;
+}
+.biz_intro h3{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.biz_intro .txt_box{
+    margin-top: 1.875rem;
+    border: 4px solid #dddddd;
+    border-radius: 1rem;
+    position: relative;
+}
+.biz_intro .txt_box p{
+    line-height: 1.75rem;
+    display: block;
+    background: #fff;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0.6rem 1.25rem;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+}
+.biz_intro .txt_box p span{
+    color: #004593;
+    font-weight: 700;
+}
+.biz_intro .txt_box p::before{
+    content: "";
+    background: #fff;
+    width: 95%;
+    height: 6px;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.biz_intro .txt_box p::after{
+    content: "";
+    background: #fff;
+    width: 95%;
+    height: 6px;
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 /* explor_history */     
 .explor_history{     
     background: #F7F8F9;     
@@ -1448,12 +1507,20 @@ p.dot_list.blue .blue_txt{
     padding: 3.125rem 2.5rem;     
     box-sizing: border-box;     
 }     
+.explor_history .history_box > h3{
+    font-size: 1.7rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    color: #004593;
+}
 .explor_history .history_box ul li:first-child{     
     margin-top: 0;     
 }     
 .explor_history .history_box ul li{     
     display: flex;     
     margin-top: 1.0rem;     
+    /* margin-left: 0.8rem; */
 }     
 .explor_history .history_box ul li h5{     
     width: 15.625rem;     
@@ -1525,18 +1592,6 @@ p.dot_list.blue .blue_txt{
     display: flex;   
     align-items: center;   
 }   
-.board_detail .head .left a {
-    width: 270px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;  /* 말줄임 적용 */    
-}
-.board_detail .head .left a h6 {
-    width: 300px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;  /* 말줄임 적용 */    
-}
 .board_detail .head .left a img{   
     margin-left: 0.5rem;   
 }   
@@ -1991,7 +2046,7 @@ p.dot_list.blue .blue_txt{
         width: 11.875rem;     
     }     
     ul.tabs.type3 li{     
-        font-size: 1.25rem;     
+        font-size: 1.15rem;     
     }           
     .board_detail .head{   
         display: block;   
@@ -2279,7 +2334,7 @@ p.dot_list.blue .blue_txt{
         font-size: 0.9rem;  
     }  
     .board_detail .head .left a h6{  
-        width: 40%;  
+        width: 60%;  
         white-space: nowrap;  
         overflow: hidden;  
         text-overflow: ellipsis;  /* 말줄임 적용 */  
@@ -2328,6 +2383,16 @@ p.dot_list.blue .blue_txt{
     }
     .book ul li .con .img{
         margin-right: 1.5rem;
+    }
+    .btn_list ul{
+        display: block;
+    }
+    .btn_list ul li{
+        margin: 0;
+        margin-bottom: 0.7rem;
+    }
+    .btn_list ul li a{
+        width: 100%;
     }
 }
 @media screen and (max-width: 450px){
